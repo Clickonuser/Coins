@@ -3,13 +3,9 @@ package com.example.coins.presentation
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.RecyclerView
-import com.example.coins.R
-import com.example.coins.presentation.adapters.CoinInfoAdapter
-import com.example.coins.data.network.model.CoinInfoDto
 import com.example.coins.databinding.ActivityCoinPriceListBinding
 import com.example.coins.domain.CoinInfo
-import kotlin.getValue
+import com.example.coins.presentation.adapters.CoinInfoAdapter
 
 class CoinPriceListActivity : AppCompatActivity() {
 

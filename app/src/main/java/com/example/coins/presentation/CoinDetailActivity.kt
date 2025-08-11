@@ -3,14 +3,10 @@ package com.example.coins.presentation
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.example.coins.R
 import com.example.coins.databinding.ActivityCoinDetailBinding
 import com.squareup.picasso.Picasso
-import kotlin.getValue
 
 class CoinDetailActivity : AppCompatActivity() {
 

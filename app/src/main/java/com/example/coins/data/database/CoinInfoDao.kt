@@ -5,7 +5,6 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.coins.data.network.model.CoinInfoDto
 
 @Dao
 interface CoinInfoDao {
@@ -17,5 +16,4 @@ interface CoinInfoDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertPriceList(priceList: List<CoinInfoDbModel>)
-
 }

@@ -12,16 +12,12 @@ import kotlinx.coroutines.launch
 class CoinViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository = CoinRepositoryImpl(application)
-
-
     private val loadDataUseCase = LoadDataUseCase(repository)
     private val getCoinInfoUseCase = GetCoinInfoUseCase(repository)
     private val getCoinInfoListUseCase = GetCoinInfoListUseCase(repository)
-
     val coinInfoList = getCoinInfoListUseCase()
 
     fun detailInfo(fSym: String) = getCoinInfoUseCase(fSym)
-
 
     init {
         viewModelScope.launch {
