@@ -2,7 +2,6 @@ package com.example.coins.data.network
 
 import com.example.coins.data.network.model.CoinNamesListDto
 import com.example.coins.data.network.model.CoinInfoJsonContainerDto
-import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 
