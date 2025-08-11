@@ -35,37 +35,40 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
 
-    // RxJava3
-    implementation("io.reactivex.rxjava3:rxjava:3.1.10")
-    implementation("io.reactivex.rxjava3:rxandroid:3.0.2")
-    implementation(libs.androidx.recyclerview)
-    implementation(libs.androidx.cardview)
 
-    // Retrofit
-    val retrofit_version = "2.11.0"
-    implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
-    implementation("com.squareup.retrofit2:converter-gson:$retrofit_version")
-    implementation("com.squareup.retrofit2:adapter-rxjava3:$retrofit_version")
-
-    // Room
-    val room_version = "2.7.1"
-    implementation("androidx.room:room-runtime:$room_version")
-    ksp("androidx.room:room-compiler:$room_version")
-    implementation("androidx.room:room-rxjava3:$room_version")
-
-    // Lifecycle
-    val lifecycle_version = "2.8.7"
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
-    kapt("androidx.lifecycle:lifecycle-compiler:$lifecycle_version")
-    implementation("androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version")
-
-    // Picasso
-    implementation("com.squareup.picasso:picasso:2.8")
+//Room
+    implementation(libs.room)
+// Кодогенератор Room
+    ksp(libs.room.compiler)
+// optional - Kotlin Extensions and Coroutines support for Room
+    implementation(libs.room.ktx)
+//Retrofit
+    implementation(libs.retrofit)
+//Gson
+    implementation(libs.gson)
+//WorkManager
+    implementation(libs.work.manager)
+// Picasso
+    implementation(libs.picasso)
+//ViewModel
+    implementation(libs.viewModel)
+//LiveData
+    implementation(libs.liveData)
+// Annotation processor
+    ksp(libs.liveDataCompiler)
+// optional - ReactiveStreams support for LiveData
+    implementation(libs.reactiveStreams)
+//OkHttpClient- не обязательна
+    implementation(libs.okHttpClient)
+//HttpLoggingInterceptor- не обязательна
+    implementation(libs.httpLoggingInterceptor)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
