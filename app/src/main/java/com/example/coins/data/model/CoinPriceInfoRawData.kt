@@ -1,4 +1,4 @@
-package com.example.coins.pojo
+package com.example.coins.data.model
 
 import com.google.gson.JsonObject
 import com.google.gson.annotations.Expose

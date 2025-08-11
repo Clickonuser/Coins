@@ -1,13 +1,13 @@
-package com.example.coins
+package com.example.coins.presentation
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import com.example.coins.api.ApiFactory
-import com.example.coins.database.AppDatabase
-import com.example.coins.pojo.CoinPriceInfo
-import com.example.coins.pojo.CoinPriceInfoRawData
+import com.example.coins.data.network.ApiFactory
+import com.example.coins.data.database.AppDatabase
+import com.example.coins.data.model.CoinPriceInfo
+import com.example.coins.data.model.CoinPriceInfoRawData
 import com.google.gson.Gson
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers

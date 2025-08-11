@@ -1,8 +1,8 @@
-package com.example.coins.pojo
+package com.example.coins.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.coins.api.ApiFactory.BASE_IMAGE_URL
+import com.example.coins.data.network.ApiFactory.BASE_IMAGE_URL
 import com.example.coins.utils.convertTimestampToTime
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

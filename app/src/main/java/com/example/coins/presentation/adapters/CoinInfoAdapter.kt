@@ -1,4 +1,4 @@
-package com.example.coins.adapters
+package com.example.coins.presentation.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,8 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.coins.R
-import com.example.coins.pojo.CoinInfo
-import com.example.coins.pojo.CoinPriceInfo
+import com.example.coins.data.model.CoinPriceInfo
 import com.squareup.picasso.Picasso
 
 class CoinInfoAdapter(private val context: Context): RecyclerView.Adapter<CoinInfoAdapter.CoinInfoViewHolder>() {

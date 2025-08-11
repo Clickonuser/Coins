@@ -1,13 +1,12 @@
-package com.example.coins
+package com.example.coins.presentation
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
-import com.example.coins.adapters.CoinInfoAdapter
-import com.example.coins.pojo.CoinPriceInfo
+import com.example.coins.R
+import com.example.coins.presentation.adapters.CoinInfoAdapter
+import com.example.coins.data.model.CoinPriceInfo
 
 class CoinPriceListActivity : AppCompatActivity() {
 
