@@ -7,18 +7,22 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.coins.R
 import com.example.coins.presentation.adapters.CoinInfoAdapter
 import com.example.coins.data.network.model.CoinInfoDto
+import com.example.coins.databinding.ActivityCoinPriceListBinding
 import com.example.coins.domain.CoinInfo
+import kotlin.getValue
 
 class CoinPriceListActivity : AppCompatActivity() {
 
     private lateinit var viewModel: CoinViewModel
-    private lateinit var rvCoinPriceList: RecyclerView
+
+    private val binding by lazy {
+        ActivityCoinPriceListBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_coin_price_list)
+        setContentView(binding.root)
 
-        rvCoinPriceList = findViewById(R.id.rvCoinPriceList)
         val adapter = CoinInfoAdapter(this)
         adapter.onCoinClickListener = object : CoinInfoAdapter.OnCoinClickListener {
             override fun onCoinClick(coinPriceInfo: CoinInfo) {
@@ -27,7 +31,7 @@ class CoinPriceListActivity : AppCompatActivity() {
             }
         }
 
-        rvCoinPriceList.adapter = adapter
+        binding.rvCoinPriceList.adapter = adapter
         viewModel = ViewModelProvider(this)[CoinViewModel::class.java]
         viewModel.coinInfoList.observe(this) {
             adapter.coinInfoList = it
