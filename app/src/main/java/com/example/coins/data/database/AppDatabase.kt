@@ -1,12 +1,11 @@
-package com.example.coins.database
+package com.example.coins.data.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.coins.pojo.CoinPriceInfo
 
-@Database(entities = [CoinPriceInfo::class], version = 1, exportSchema = false)
+@Database(entities = [CoinInfoDbModel::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     companion object {
         private var db: AppDatabase? = null
@@ -20,11 +19,13 @@ abstract class AppDatabase : RoomDatabase() {
                     context,
                     AppDatabase::class.java,
                     DB_NAME
-                ).build()
+                )
+                    .fallbackToDestructiveMigration()
+                    .build()
                 db = instance
                 return instance
             }
         }
     }
-    abstract fun coinPriceInfoDao(): CoinPriceInfoDao
+    abstract fun coinPriceInfoDao(): CoinInfoDao
 }
