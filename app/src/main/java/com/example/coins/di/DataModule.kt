@@ -3,6 +3,8 @@ package com.example.coins.di
 import android.app.Application
 import com.example.coins.data.database.AppDatabase
 import com.example.coins.data.database.CoinInfoDao
+import com.example.coins.data.network.ApiFactory
+import com.example.coins.data.network.ApiService
 import com.example.coins.data.repository.CoinRepositoryImpl
 import com.example.coins.domain.CoinRepository
 import dagger.Binds
@@ -11,16 +13,24 @@ import dagger.Provides
 
 @Module
 interface DataModule {
-
+    @ApplicationScope
     @Binds
     fun bindCoinRepository(impl: CoinRepositoryImpl): CoinRepository
 
     companion object {
+        @ApplicationScope
         @Provides
         fun provideCoinInfoDao(
             application: Application
         ): CoinInfoDao {
             return AppDatabase.getInstance(application).coinPriceInfoDao()
         }
+
+        @ApplicationScope
+        @Provides
+        fun provideApiService(): ApiService {
+            return ApiFactory.apiService
+        }
+
     }
 }
