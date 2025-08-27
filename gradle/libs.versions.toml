@@ -22,6 +22,7 @@ lifecycle_version="2.8.6"
 reactiveStreams_version="2.8.6"
 picasso_version="2.8"
 work_manager = "2.9.1"
+dagger2_version = "2.52"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -60,6 +61,12 @@ reactiveStreams = {group = "androidx.lifecycle", name = "lifecycle-reactivestrea
 okHttpClient = {group = "com.squareup.okhttp3", name = "okhttp", version.ref ="okHttpClient_version"}
 #HttpLoggingInterceptor- не обязательна
 httpLoggingInterceptor = {group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref ="okHttpClient_version"}
+#Dagger2
+dagger2 = { group = "com.google.dagger", name = "dagger", version.ref = "dagger2_version" }
+#Dagger2 кодогенратор
+dagger2-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger2_version" }
+#Dagger2 аннотации
+dagger2-android-processor = { group = "com.google.dagger", name = "dagger-android-processor", version.ref = "dagger2_version" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
